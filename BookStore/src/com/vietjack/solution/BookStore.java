@@ -140,12 +140,23 @@ public class BookStore {
 
 	// tra ve tat ca cac tac gia, ko trung nhau
 	public HashSet<Author> getAllAuthors() {
-		return null;
+		HashSet authors = new HashSet<Author>();
+		for (Book book : bookList) {
+			// authors.addAll(book.getAuthor());
+			for (Author author : book.getAuthor()) {
+				authors.add(author);
+			}
+		}
+		return authors;
 	}
 
 	// tra ve tat ca cac the loai
 	public HashSet<Category> getAllCategory() {
-		return null;
+		HashSet categorys = new HashSet<Category>();
+		for (Book book : bookList) {
+			categorys.add(book.getCategory());
+		}
+		return categorys;
 	}
 
 	/// hard
